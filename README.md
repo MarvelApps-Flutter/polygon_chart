@@ -1,39 +1,62 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+## Description
+Polygon charts are a visual representation used to showcase app features and data in a colorful chart form. Each feature or data point corresponds to a vertex on the polygon, and the distance from the center indicates its value. This dynamic chart provides a clear and engaging overview of app characteristics and statistics.
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+You can easily achieve creating beautiful polygon charts using polygon_chart flutter package without the hassel of creating custom widgets for every data.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+- polygon_chart: [polygon_chart](https://pub.dev/packages/polygon_chart)
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+  [![Pub](https://img.shields.io/pub/v/polygon_chart.svg?label=dev&include_prereleases)](https://pub.dev/packages/polygon_chart)
 
-## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+## Get started
+Add dependency 
+You can use the command to add polygon_chart as a dependency with the latest stable version:
 
-## Getting started
+``` 
+   $ dart pub add polygon_chart
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
 ```
 
-## Additional information
+Or you can manually add polygon_chart into the dependencies section in your pubspec.yaml:
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+
+```
+  dependencies:
+      polygon_chart: ^0.0.1
+
+```
+
+## Example
+
+### Fetching details using document file
+
+```
+ import 'package:polygon_chart/polygon_chart.dart';
+  
+ Container(
+          color: darkMode ? Colors.black : Colors.white,
+          child: Center(
+            child: SizedBox(
+              height: 500,
+              width: MediaQuery.of(context).size.width,
+              child: darkMode
+                  ? ChartPage.dark(
+                      ticks: ticks,
+                      features: features,
+                      data: data,
+                      reverseAxis: true,
+                      useSides: true,
+                    )
+                  : ChartPage.light(
+                      ticks: ticks,
+                      features: features,
+                      data: data,
+                      reverseAxis: true,
+                      useSides: true,
+                    ),
+            ),
+          ),
+        )
+
+```
+
